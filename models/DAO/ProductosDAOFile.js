@@ -6,7 +6,7 @@ class ProductoFileDAO extends IProductosDAO {
     constructor() {
         super();
     }
-
+    
     async listar() {
         try {
             let lecturaArchivo = await fs.promises.readFile(this.pathArchivo, 'utf-8');
@@ -63,5 +63,5 @@ class ProductoFileDAO extends IProductosDAO {
     }
 }
 
-module.exports = ProductoMongoDAO;
+module.exports = ProductoFileDAO;
 

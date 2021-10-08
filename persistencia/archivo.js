@@ -24,7 +24,6 @@ class Archivo {
         let leidos = await this.leer()
         producto.id = leidos.length + 1
         leidos.push(producto)
-
         try {
             await fs.promises.writeFile(this.pathArchivo, JSON.stringify(leidos, null, '\t'));
         } catch {

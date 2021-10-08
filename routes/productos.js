@@ -5,9 +5,12 @@ const Faker = require('../models/faker');
 const log4js = require("log4js");
 var { graphqlHTTP } = require('express-graphql');
 const schema = require('../models/productosGraphQL').schema
-const SingletonFactory = require('../persistencia/factory');
-let singletonFactory = SingletonFactory.getInstancia();
-let instanciaFactory = singletonFactory.getPersistencia('mysql')
+// const SingletonFactory = require('../persistencia/factory');
+// let singletonFactory = SingletonFactory.getInstancia();
+// let instanciaFactory = singletonFactory.getPersistencia('mysql') 
+let DAOFactory = require('../models/DAO/DAOFactory')
+let instanciaFactory = DAOFactory.getPersistencia('File') // File o Mongo
+
 
 // const loggerConsola = log4js.getLogger('consola');
 // const loggerWarn = log4js.getLogger('warn');
@@ -115,17 +118,27 @@ routerProductos.delete('/borrar', async (req, res) => {
 
 // FUNCIONES GRAPHQL
 const buscar = async function () {
-    return await instanciaFactory.listar();
-    // return await productos.listar();
+    // return await instanciaFactory.listar();
+    return await productos.listar();
+}
+const guardar = async function (nuevoProducto) {
+    return await productos.guardar(nuevoProducto);
+    // return await instanciaFactory.guardar(nuevoProducto);
 }
 const actualizar = async function (nuevoProducto) {
-    console.log(JSON.stringify(nuevoProducto));
-    return await instanciaFactory.actualizar(nuevoProducto._id, nuevoProducto);
-    // return await productos.actualizar(nuevoProducto._id, nuevoProducto);
+    // console.log(JSON.stringify(nuevoProducto));    
+    // return await instanciaFactory.actualizar(nuevoProducto._id, nuevoProducto);
+    return await productos.actualizar(nuevoProducto._id, nuevoProducto);
+}
+const borrar = async function (id) {
+    return await productos.borrar(id)
+    // return await instanciaFactory.borrar(id);
 }
 var root = {
     buscar: buscar,
+    guardarProducto: guardar,
     actualizarProducto: actualizar,
+    borrarProducto: borrar
 };
 
 routerProductos.use('/graphql', graphqlHTTP({
