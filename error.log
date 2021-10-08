@@ -1,0 +1,11 @@
+[2021-10-07T23:10:32.976] [ERROR] error - TypeError: instanciaFactory.listar is not a function
+    at C:\Users\Kai\Documents\GitHub\Curso CoderHouse\Curso Backend\Clase44\Desarrollo-de-un-servidor-web-basado-en-capas---Parte-2\routes\productos.js:31:45
+    at Layer.handle [as handle_request] (C:\Users\Kai\Documents\GitHub\Curso CoderHouse\Curso Backend\Clase44\Desarrollo-de-un-servidor-web-basado-en-capas---Parte-2\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kai\Documents\GitHub\Curso CoderHouse\Curso Backend\Clase44\Desarrollo-de-un-servidor-web-basado-en-capas---Parte-2\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kai\Documents\GitHub\Curso CoderHouse\Curso Backend\Clase44\Desarrollo-de-un-servidor-web-basado-en-capas---Parte-2\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\Kai\Documents\GitHub\Curso CoderHouse\Curso Backend\Clase44\Desarrollo-de-un-servidor-web-basado-en-capas---Parte-2\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kai\Documents\GitHub\Curso CoderHouse\Curso Backend\Clase44\Desarrollo-de-un-servidor-web-basado-en-capas---Parte-2\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kai\Documents\GitHub\Curso CoderHouse\Curso Backend\Clase44\Desarrollo-de-un-servidor-web-basado-en-capas---Parte-2\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kai\Documents\GitHub\Curso CoderHouse\Curso Backend\Clase44\Desarrollo-de-un-servidor-web-basado-en-capas---Parte-2\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (C:\Users\Kai\Documents\GitHub\Curso CoderHouse\Curso Backend\Clase44\Desarrollo-de-un-servidor-web-basado-en-capas---Parte-2\node_modules\express\lib\router\index.js:174:3)
+    at router (C:\Users\Kai\Documents\GitHub\Curso CoderHouse\Curso Backend\Clase44\Desarrollo-de-un-servidor-web-basado-en-capas---Parte-2\node_modules\express\lib\router\index.js:47:12)
